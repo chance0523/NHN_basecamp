@@ -54,7 +54,7 @@ public class GuestBookController {
         return "redirect:/guestbook/list";
     }
 
-//    @GetMapping("/read")
+    //    @GetMapping("/read")
     @GetMapping({"/read", "/modify"})
     public void read(long gno, @ModelAttribute("requestDTO") PageRequestDTO requestDTO, Model model) {
 
@@ -79,7 +79,9 @@ public class GuestBookController {
     }
 
     @PostMapping("/modify")
-    public String modify(GuestbookDTO dto, @ModelAttribute("requestDTO") PageRequestDTO requestDTO, RedirectAttributes redirectAttributes) {
+    public String modify(GuestbookDTO dto,
+                         @ModelAttribute("requestDTO") PageRequestDTO requestDTO,
+                         RedirectAttributes redirectAttributes) {
 
         log.info("post modify................");
         log.info("dto: " + dto);
@@ -87,6 +89,8 @@ public class GuestBookController {
         service.modify(dto);
 
         redirectAttributes.addAttribute("page", requestDTO.getPage());
+        redirectAttributes.addAttribute("type", requestDTO.getType());
+        redirectAttributes.addAttribute("keyword", requestDTO.getKeyword());
         redirectAttributes.addAttribute("gno", dto.getGno());
 
         return "redirect:/guestbook/read"; // 수정 후에는 조회 페이지로 이동
