@@ -4,6 +4,8 @@ import com.basecamp.mreview.entity.Member;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.stream.IntStream;
 
@@ -12,6 +14,9 @@ public class MemberRepositoryTests {
 
     @Autowired
     private MemberRepository memberRepository;
+
+    @Autowired
+    private ReviewRepository reviewRepository;
 
     @Test
     public void insertMembers() {
@@ -22,5 +27,19 @@ public class MemberRepositoryTests {
                     .nickname("reviewer" + i).build();
             memberRepository.save(member);
         });
+    }
+
+    @Commit
+    @Transactional
+    @Test
+    public void testDeleteMember() {
+
+        Long mid = 52L;
+
+        Member member = Member.builder().mid(mid).build();
+
+        // 순서 주의
+        reviewRepository.deleteByMember(member);
+        memberRepository.deleteById(mid);
     }
 }
