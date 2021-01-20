@@ -8,6 +8,9 @@
     <input multiple name="uploadFiles" type="file">
     <button class="uploadBtn">Upload</button>
 
+    <div class="uploadResult">
+
+    </div>
 
     <script crossorigin="anonymous"
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
@@ -40,12 +43,26 @@
                 success: function (result) {
                     console.log(result);
                     // 나중에 화면 처리
+                    showUploadedImages(result);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     console.log(textStatus);
                 }
             }); // $.ajax
         });
+
+        function showUploadedImages(arr) {
+
+            console.log(arr);
+
+            var divArea = $(".uploadResult");
+
+            for (var i = 0; i < arr.length; i++) {
+                console.log(arr[i].imageURL);
+                divArea.append("<img src='/display?fileName=" + arr[i].imageURL + "'>");
+            }
+        }
+
     </script>
 
 </body>
