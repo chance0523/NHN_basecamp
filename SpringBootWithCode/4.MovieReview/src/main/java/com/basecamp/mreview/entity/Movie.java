@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Getter
 @ToString
-public class Movie {
+public class Movie extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
