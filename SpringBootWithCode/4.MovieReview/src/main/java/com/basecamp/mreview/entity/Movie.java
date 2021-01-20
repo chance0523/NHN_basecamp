@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
 @ToString
 public class Movie {
 
