@@ -1,10 +1,12 @@
 package com.basecamp.mreview.controller;
 
 import com.basecamp.mreview.dto.MovieDTO;
+import com.basecamp.mreview.dto.PageRequestDTO;
 import com.basecamp.mreview.service.MovieService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,5 +34,14 @@ public class MovieController {
         redirectAttributes.addFlashAttribute("msg", mno);
 
         return "redirect:/movie/list";
+    }
+
+    @GetMapping("/list")
+    public void list(PageRequestDTO pageRequestDTO, Model model) {
+
+        log.info("pageRequestDTO: " + pageRequestDTO);
+
+        model.addAttribute("result", movieService.getList(pageRequestDTO));
+
     }
 }
