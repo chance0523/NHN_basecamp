@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TODOLIST</title>
+        <style>
+            .complete {
+                color: #999;
+                text-decoration: line-through;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>TODOLIST</h2>
+        <input type="text" id="textInput" /><button id="addTodoButton">
+            ADD
+        </button>
+        <div id="counter">
+            <span id="total">전체: 0</span>
+            <span id="incomplete">미완료: 0</span>
+            <span id="complete">완료: 0</span>
+        </div>
+        <ul id="todoList"></ul>
+        <script src="./app.js"></script>
+    </body>
+
+    <style></style>
+</html>
