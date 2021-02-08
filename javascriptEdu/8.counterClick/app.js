@@ -62,4 +62,22 @@
         );
         return li;
     }
+
+    document.querySelector("#counter").addEventListener(
+        "click",
+        (ev) => {
+            switch (ev.target.id) {
+                case "complete":
+                    list.className = "hideIncomplete";
+                    break;
+                case "incomplete":
+                    list.className = "hideComplete";
+                    break;
+                default:
+                    list.className = "";
+                    break;
+            }
+        },
+        false
+    );
 })();

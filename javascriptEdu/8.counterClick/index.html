@@ -9,6 +9,12 @@
                 color: #999;
                 text-decoration: line-through;
             }
+            .hideIncomplete li:not(.complete) {
+                display: none;
+            }
+            .hideComplete li.complete {
+                display: none;
+            }
         </style>
     </head>
 
