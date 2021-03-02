@@ -1,9 +1,0 @@
-{
-  "properties": [
-    {
-      "name": "spring.shell.interactive.enabled",
-      "type": "java.lang.String",
-      "description": "Description for spring.shell.interactive.enabled."
-    }
-  ]
-}
