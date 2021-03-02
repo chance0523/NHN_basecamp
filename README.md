@@ -7,4 +7,6 @@
   - :white_check_mark: 21.01.20 ~ 21.01.21 : [4.Movie Review(영화 리뷰) 프로젝트](https://github.com/samuel950523/NHN_basecamp/tree/master/SpringBootWithCode/4.MovieReview)
 
 - 21.01.25 ~ : 식당 좌석 예약 서비스
-  - 21.01.25 ~ 21.02.01: 기획
+  - :white_check_mark: 21.01.25 ~ 21.02.01: 기획
+  - :white_check_mark: 21.02.08 ~ 21.02.22: 개발
+  - 21.02.22 ~ : refactoring, develop
