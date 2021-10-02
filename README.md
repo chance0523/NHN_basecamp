@@ -9,4 +9,6 @@
 - 21.01.25 ~ : 식당 좌석 예약 서비스
   - :white_check_mark: 21.01.25 ~ 21.02.01: 기획
   - :white_check_mark: 21.02.08 ~ 21.02.22: 개발
-  - 21.02.22 ~ : refactoring, develop
+  - 21.02.22 ~ 21.03.26: refactoring, develop
+
+[회고](https://chance0523.github.io/basecamp/2021/03/29/basecamp6/)
